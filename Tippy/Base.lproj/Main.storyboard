@@ -71,7 +71,7 @@
                                 <rect key="frame" x="25" y="430" width="328" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="18%"/>
+                                    <segment title="15%"/>
                                     <segment title="20%"/>
                                     <segment title="25%"/>
                                 </segments>
@@ -86,7 +86,13 @@
                             <outletCollection property="gestureRecognizers" destination="nea-3K-xqr" appends="YES" id="16f-Pw-Kzj"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tip Calculator" id="r5U-CI-bKs"/>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="r5U-CI-bKs">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="MFu-bm-5cG">
+                            <connections>
+                                <segue destination="qtT-c9-lVb" kind="push" id="pHB-qz-JWM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="49T-5K-1BK" id="oTt-SO-cvN"/>
                         <outlet property="tipControl" destination="AN0-Ve-adX" id="3qq-hj-UpD"/>
@@ -102,6 +108,45 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="606.5" y="147.5"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="MVR-TB-klN">
+            <objects>
+                <viewController id="qtT-c9-lVb" customClass="SettingsViewController" customModule="Tippy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VyI-cj-RaQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Tip Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DVl-mA-mwe">
+                                <rect key="frame" x="23" y="115" width="148" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="ZgO-Up-b0m">
+                                <rect key="frame" x="23" y="149" width="336" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                    <segment title="25%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="updateDefaultTip:" destination="qtT-c9-lVb" eventType="valueChanged" id="IDc-Jv-IaX"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vUX-zX-gJU"/>
+                    <connections>
+                        <outlet property="defaultTipControl" destination="ZgO-Up-b0m" id="TfL-XW-lWS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8f-7v-27g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.5" y="143.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u0v-cV-z1O">
